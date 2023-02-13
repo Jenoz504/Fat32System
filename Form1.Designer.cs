@@ -33,7 +33,6 @@ namespace Fat32System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.vistaArchivos = new System.Windows.Forms.ListView();
             this.ListaIconos = new System.Windows.Forms.ImageList(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,10 +42,20 @@ namespace Fat32System
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnIr = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCopiar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // vistaArchivos
             // 
+            this.vistaArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.vistaArchivos.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.vistaArchivos.HideSelection = false;
             this.vistaArchivos.LargeImageList = this.ListaIconos;
             this.vistaArchivos.Location = new System.Drawing.Point(131, 38);
@@ -74,18 +83,12 @@ namespace Fat32System
             this.ListaIconos.Images.SetKeyName(9, "png.png");
             this.ListaIconos.Images.SetKeyName(10, "folder64.png");
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 381);
-            this.listBox1.TabIndex = 1;
-            // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 440);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(33, 463);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 2;
@@ -93,8 +96,10 @@ namespace Fat32System
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 460);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(33, 483);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 3;
@@ -102,8 +107,10 @@ namespace Fat32System
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(207, 460);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(218, 483);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 4;
@@ -111,8 +118,10 @@ namespace Fat32System
             // 
             // lblTipo
             // 
+            this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(254, 460);
+            this.lblTipo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTipo.Location = new System.Drawing.Point(265, 483);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(10, 13);
             this.lblTipo.TabIndex = 5;
@@ -120,8 +129,10 @@ namespace Fat32System
             // 
             // lblNombre
             // 
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(72, 440);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.Location = new System.Drawing.Point(83, 463);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(10, 13);
             this.lblNombre.TabIndex = 6;
@@ -129,8 +140,10 @@ namespace Fat32System
             // 
             // lblTamanio
             // 
+            this.lblTamanio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblTamanio.AutoSize = true;
-            this.lblTamanio.Location = new System.Drawing.Point(72, 460);
+            this.lblTamanio.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTamanio.Location = new System.Drawing.Point(83, 483);
             this.lblTamanio.Name = "lblTamanio";
             this.lblTamanio.Size = new System.Drawing.Size(10, 13);
             this.lblTamanio.TabIndex = 7;
@@ -138,6 +151,10 @@ namespace Fat32System
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtDireccion.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDireccion.Location = new System.Drawing.Point(79, 11);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(868, 20);
@@ -145,29 +162,89 @@ namespace Fat32System
             // 
             // btnIr
             // 
+            this.btnIr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIr.BackColor = System.Drawing.Color.Gray;
+            this.btnIr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIr.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnIr.Location = new System.Drawing.Point(960, 10);
             this.btnIr.Name = "btnIr";
             this.btnIr.Size = new System.Drawing.Size(67, 23);
             this.btnIr.TabIndex = 9;
             this.btnIr.Text = "Buscar";
-            this.btnIr.UseVisualStyleBackColor = true;
+            this.btnIr.UseVisualStyleBackColor = false;
             this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
             // 
             // btnAtras
             // 
+            this.btnAtras.BackColor = System.Drawing.Color.Gray;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtras.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAtras.Location = new System.Drawing.Point(6, 9);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(67, 23);
             this.btnAtras.TabIndex = 10;
             this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.flowLayoutPanel1.Controls.Add(this.btnCopiar);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnCrear);
+            this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 38);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 383);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
+            // btnCopiar
+            // 
+            this.btnCopiar.Location = new System.Drawing.Point(3, 3);
+            this.btnCopiar.Name = "btnCopiar";
+            this.btnCopiar.Size = new System.Drawing.Size(116, 89);
+            this.btnCopiar.TabIndex = 12;
+            this.btnCopiar.Text = "Copiar";
+            this.btnCopiar.UseVisualStyleBackColor = true;
+            this.btnCopiar.Click += new System.EventHandler(this.btnCopiar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 89);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Pegar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Location = new System.Drawing.Point(3, 193);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(116, 89);
+            this.btnCrear.TabIndex = 14;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(3, 288);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(116, 89);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(1036, 534);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnIr);
             this.Controls.Add(this.txtDireccion);
@@ -177,11 +254,11 @@ namespace Fat32System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.vistaArchivos);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +267,6 @@ namespace Fat32System
         #endregion
 
         private System.Windows.Forms.ListView vistaArchivos;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -201,6 +277,11 @@ namespace Fat32System
         private System.Windows.Forms.Button btnIr;
         private System.Windows.Forms.ImageList ListaIconos;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnCopiar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

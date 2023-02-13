@@ -16,10 +16,12 @@ namespace Fat32System
     {
         //Variable que contiene la direccion en la que estamos dentro del sistema de archivos
         private string direccion = @"C:\";
+        //Variable que usaremos como la direccion que vamos a copiar o pegar
+        private string direccionACopiar = "";
         private string itemSeleccionado = "";
         //Indica si estamos en una direccion de archivo o en una carpeta
         private bool esArchivo = false;
- 
+        
         public Form1()
         {
             InitializeComponent();            
@@ -192,6 +194,14 @@ namespace Fat32System
             {
                 MessageBox.Show(e.Message);
             }
+        }
+
+        private void btnCopiar_Click(object sender, EventArgs e)
+        {
+            //Variable con la direcciona a pegar
+            string direccionAPegar = "";
+            direccionACopiar = direccion + itemSeleccionado;
+            
         }
     }
 }
