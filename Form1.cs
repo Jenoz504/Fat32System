@@ -71,7 +71,6 @@ namespace Fat32System
                     FileInfo[] archivos = listaArchivos.GetFiles(); //trae archivos
                     DirectoryInfo[] dirs = listaArchivos.GetDirectories(); //trae los carpetas
                     vistaArchivos.Items.Clear();
-
                     TraerDirectoriosEIconos(archivos, dirs);
                 }
                 else
@@ -141,7 +140,7 @@ namespace Fat32System
         /// Cada que cambie la seleccion de un archivo
         /// </summary>        
         private void vistaArchivos_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
+        { 
             itemSeleccionado = e.Item.Text;
             //Concatenamos para que cambie la barra de direcciones
             FileAttributes atributos = File.GetAttributes(direccion + @"\" + itemSeleccionado);
@@ -162,6 +161,7 @@ namespace Fat32System
 
         private void btnIr_Click(object sender, EventArgs e)
         {
+            direccion = txtDireccion.Text.Substring(0, (txtDireccion.Text.LastIndexOf(@"\")));
             cargarDirectorios();
         }
 
@@ -212,12 +212,51 @@ namespace Fat32System
         {
             string direccionAPegar = direccion;
             FileInfo archivoCopiado = new FileInfo(direccionACopiar);
-            File.Copy(direccionACopiar, direccionAPegar+archivoCopiado.Name+"."+archivoCopiado.Extension,true);
+            if (archivoCopiado.Length > 4294967295)
+            {
+                MessageBox.Show("No se puede pasar archivos mayores a 4gb", "Fat32");
+            }
+            else
+            {        
+                File.Copy(direccionACopiar, direccionAPegar+archivoCopiado.Name+"."+archivoCopiado.Extension,true);
+            }
+            cargarDirectorios();
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            Form crear = new crear(direccion);
+            crear.ShowDialog();
+            cargarDirectorios();                                                                                                    
+        }
 
+        /// <summary>
+        /// Boton eliminars
+        /// </summary>        
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarArchivo();
+        }
+
+        /// <summary>
+        /// Elimina un archivo
+        /// </summary>
+        private void eliminarArchivo()
+        {
+            //MessageBox.Show(direccion + @"\" + itemSeleccionado);
+            try
+            {
+                File.Delete(direccion + @"\" + itemSeleccionado);
+                MessageBox.Show("Se elimino satisfactoriamente");
+                //limpiamos el itemSeleccionado para evitar errores con las direcciones                
+                itemSeleccionado = @"shampoo\";
+                IrAnterior();
+                cargarDirectorios();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
     }
 }
