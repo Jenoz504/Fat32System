@@ -199,9 +199,25 @@ namespace Fat32System
         private void btnCopiar_Click(object sender, EventArgs e)
         {
             //Variable con la direcciona a pegar
-            string direccionAPegar = "";
             direccionACopiar = direccion + itemSeleccionado;
-            
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pegar();
+        }
+
+        private void Pegar()
+        {
+            string direccionAPegar = direccion;
+            FileInfo archivoCopiado = new FileInfo(direccionACopiar);
+            File.Copy(direccionACopiar, direccionAPegar+archivoCopiado.Name+"."+archivoCopiado.Extension,true);
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
