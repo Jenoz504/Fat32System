@@ -64,7 +64,7 @@ namespace Fat32System
             this.vistaArchivos.SmallImageList = this.ListaIconos;
             this.vistaArchivos.TabIndex = 0;
             this.vistaArchivos.UseCompatibleStateImageBehavior = false;
-            this.vistaArchivos.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.vistaArchivos_ItemSelectionChanged);            
+            this.vistaArchivos.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.vistaArchivos_ItemSelectionChanged);
             this.vistaArchivos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.vistaArchivos_MouseDoubleClick);
             // 
             // ListaIconos
