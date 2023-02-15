@@ -15,10 +15,10 @@ namespace Fat32System
     public partial class Form1 : Form
     {
         //Variable que contiene la direccion en la que estamos dentro del sistema de archivos
-        private string direccion = @"C:\";
+        private string direccion = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\";
         //Variable que usaremos como la direccion que vamos a copiar o pegar
-        private string direccionACopiar = "";
-        private string itemSeleccionado = "";
+        private string direccionACopiar;
+        private string itemSeleccionado;
         //Indica si estamos en una direccion de archivo o en una carpeta
         private bool esArchivo = false;
         
@@ -42,14 +42,13 @@ namespace Fat32System
 
             DirectoryInfo listaArchivos;
             FileAttributes atributosDelArchivo;
-            string direccionTemporal = "";
-            
+
             try
             {
                 if (esArchivo)
                 {
                     //Mostrar Datos del archivo
-                    direccionTemporal = direccion + itemSeleccionado + @"\";
+                    string direccionTemporal = direccion + itemSeleccionado + @"\";
                     FileInfo detallesDelArchivo = new FileInfo(direccionTemporal);
                     lblNombre.Text = detallesDelArchivo.FullName;
                     lblTamanio.Text = Convert.ToString(detallesDelArchivo.Length);
