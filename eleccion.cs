@@ -16,15 +16,41 @@ namespace Fat32System
         private string direccion;
         public eleccion(string direccion)
         {
-            InitializeComponent(); 
-            this.direccion=direccion;
+            InitializeComponent();
+            this.direccion = direccion;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void file_Click(object sender, EventArgs e)
         {
-            Form crear = new crear(direccion);  
-            crear.ShowDialog();
+            Form crear = new crear(direccion);
+            crear.Show();
 
+            this.Hide();
+
+        }
+
+        private void eleccion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Folder_Click(object sender, EventArgs e)
+        {
+            Form crearCarpeta = new crearCarpeta(direccion);
+            crearCarpeta.Show();
+            this.Hide();
+        }
+
+        private void Folder_Click_1(object sender, EventArgs e)
+        {
+            Form frmCarpeta = new crearCarpeta(direccion);
+            frmCarpeta.Show();
+            this.Hide();
         }
     }
 }

@@ -51,6 +51,18 @@
     <Compile Include="crear.Designer.cs">
       <DependentUpon>crear.cs</DependentUpon>
     </Compile>
+    <Compile Include="crearCarpeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crearCarpeta.Designer.cs">
+      <DependentUpon>crearCarpeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eleccion.Designer.cs">
+      <DependentUpon>eleccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="crear.resx">
       <DependentUpon>crear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crearCarpeta.resx">
+      <DependentUpon>crearCarpeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eleccion.resx">
+      <DependentUpon>eleccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

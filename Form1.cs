@@ -224,7 +224,7 @@ namespace Fat32System
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            Form crear = new crear(direccion);
+            Form crear = new eleccion(direccion);
             crear.ShowDialog();
             cargarDirectorios();                                                                                                    
         }
